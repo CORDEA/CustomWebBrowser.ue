@@ -13,5 +13,10 @@ UCLASS()
 class CUSTOMWEBBROWSER_API UMyWebBrowser : public UWebBrowser
 {
 	GENERATED_BODY()
-	
+
+	void HandleOnLoadCompleted();
+	void HandleOnLoadError();
+
+protected:
+	virtual TSharedRef<SWidget> RebuildWidget() override;
 };
